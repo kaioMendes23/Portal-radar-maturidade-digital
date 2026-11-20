@@ -29,18 +29,6 @@ Início · Painéis de mercado (Adoção tecnológica, Hipóteses × evidência,
 Demandas da ALL DADOS (Demandas e projetos de BI, Demandas × mercado) · Metodologia e dados · Sobre o projeto.
 O endereço de cada uma é compartilhável (ex.: `.../#/demandas`).
 
-## Incorporar o Power BI de verdade (opcional)
-
-Hoje cada página mostra os painéis interativos do portal e, abaixo, a **captura** do relatório do Power BI.
-Para trocar a captura pelo relatório ao vivo:
-
-1. No Power BI Service, publique o relatório e gere o link de incorporação de cada aba
-   (**Arquivo > Incorporar relatório > Publicar na Web**, ou o link seguro da sua organização).
-2. Cole cada link em `js/config.js`, no campo `powerbi` correspondente (`adocao`, `demandas`, `mercado`).
-3. Envie o arquivo atualizado ao GitHub. O portal passa a exibir o relatório interativo.
-
-Atenção: "Publicar na Web" deixa o relatório **público**. Os dados do relatório já são agregados
-(as views não trazem número do chamado, cliente nem equipe), mas confirme com a ALL DADOS antes de publicar.
 
 ## Dados e privacidade
 
