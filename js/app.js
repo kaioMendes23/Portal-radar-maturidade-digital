@@ -1,12 +1,9 @@
-/* Radar de Maturidade Digital — portal estático (sem dependências).
-   Estrutura: dados em js/data.js, ajustes em js/config.js. */
 (function () {
   'use strict';
   var D = window.PORTAL_DATA, C = window.PORTAL_CONFIG || {};
   var IND = D.IND, DEM = D.DEM, REC = D.REC;
   var PBI = C.powerbi || {};
 
-  /* ---------- utilidades ---------- */
   var nf = new Intl.NumberFormat('pt-BR');
   var num = function (x) { return nf.format(x); };
   var fmt1 = function (x) { return x.toFixed(1).replace('.', ',') + '%'; };
@@ -25,10 +22,8 @@
   };
   var YEARS = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
 
-  /* ---------- estado dos filtros ---------- */
   var S = { ind: 0, item: 0, rec: 'porte', exInd: 0, exItem: 0, exMerc: 14, ano: 'todos', status: 'todos', area: 'todos', q: '' };
 
-  /* ---------- blocos reutilizáveis ---------- */
   function row(label, w, val, sub, cls) {
     return '<div class="brow"><span>' + label + '</span><div class="track"><div class="fill ' + (cls || '') + '" style="width:' + w + '"></div></div>' +
       '<span class="mono val">' + val + '</span>' + (sub ? '<span class="sub">' + sub + '</span>' : '') + '</div>';
@@ -63,7 +58,6 @@
       (linkMetodo ? '<p style="margin:14px 0 0"><a href="#/metodologia">Metodologia completa →</a></p>' : '') + '</aside>';
   }
 
-  /* ---------- páginas ---------- */
   function viewInicio() {
     var a = Math.round(P(0, 0, 3)), b = Math.round(P(0, 0, 1)), c = Math.round(P(0, 0, 14)), d = Math.round(P(0, 0, 13));
     var total = DEM.reduce(function (s, r) { return s + r[4]; }, 0);
@@ -330,7 +324,6 @@
       contato + '</section>';
   }
 
-  /* ---------- roteamento ---------- */
   var ROUTES = {
     'inicio': [viewInicio, 'inicio'], 'mercado': [viewAdocao, 'mercado'], 'mercado/hipoteses': [viewHipoteses, 'mercado'], 'mercado/explorador': [viewExplorador, 'mercado'],
     'demandas': [viewDemandas, 'demandas'], 'demandas/cruzamento': [viewCruzamento, 'demandas'], 'metodologia': [viewMetodo, 'metodologia'], 'sobre': [viewSobre, 'sobre']
@@ -359,7 +352,6 @@
     if (el && el !== document.activeElement && !(el.tagName === 'H1')) { el.focus({ preventScroll: true }); try { if (ss != null && el.setSelectionRange) el.setSelectionRange(ss, se); } catch (e) {} }
   }
 
-  /* ---------- eventos ---------- */
   function csv() {
     var tipo = function (i) { return i === 0 ? 'Total' : i <= 3 ? 'Porte' : i <= 8 ? 'Região' : 'Mercado de atuação'; };
     var lines = ['indicador;item;tipo_recorte;categoria;qtd_empresas;qtd_base;percentual'];
@@ -392,7 +384,7 @@
   });
   document.addEventListener('input', function (e) {
     if (!e.target.hasAttribute || !e.target.hasAttribute('data-q')) return;
-    S.q = e.target.value; var d = dictRows();   /* atualiza só a tabela, sem perder o foco do campo */
+    S.q = e.target.value; var d = dictRows();
     document.getElementById('dictBody').innerHTML = d.html; document.getElementById('dictEmpty').hidden = d.n > 0;
   });
   menuBtn.addEventListener('click', function () { var o = navEl.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', String(o)); });
