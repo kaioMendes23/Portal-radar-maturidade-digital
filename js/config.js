@@ -4,7 +4,7 @@
 window.PORTAL_CONFIG = {
 
   /* Data exibida em "Atualizado em" (formato livre). */
-  atualizadoEm: "17/11/2026",
+  atualizadoEm: "21/11/2026",
 
   /* E-mail de contato do projeto (aparece na página "Sobre o projeto").
      Deixe vazio ("") para esconder o bloco de contato. */
@@ -15,8 +15,8 @@ window.PORTAL_CONFIG = {
      Arquivo > Incorporar relatório > Publicar na Web (ou o link seguro da sua organização).
      Enquanto o campo estiver vazio, o portal mostra a captura de tela do relatório. */
   powerbi: {
-    adocao: "",    // aba "Adoção tecnológica"
-    demandas: "",  // aba "Demandas e projetos de BI"
-    mercado: ""    // aba "Demandas × mercado"
+    adocao: "https://app.powerbi.com/view?r=eyJrIjoiMzRhZjVlNzctMTc0Ni00NDk4LThjY2QtMmRiODMyMjZmYzc0IiwidCI6IjE0Y2JkNWE3LWVjOTQtNDZiYS1iMzE0LWNjMGZjOTcyYTE2MSIsImMiOjh9",    // aba "Adoção tecnológica"
+    demandas: "https://app.powerbi.com/view?r=eyJrIjoiMzRhZjVlNzctMTc0Ni00NDk4LThjY2QtMmRiODMyMjZmYzc0IiwidCI6IjE0Y2JkNWE3LWVjOTQtNDZiYS1iMzE0LWNjMGZjOTcyYTE2MSIsImMiOjh9",  // aba "Demandas e projetos de BI"
+    mercado: "https://app.powerbi.com/view?r=eyJrIjoiMzRhZjVlNzctMTc0Ni00NDk4LThjY2QtMmRiODMyMjZmYzc0IiwidCI6IjE0Y2JkNWE3LWVjOTQtNDZiYS1iMzE0LWNjMGZjOTcyYTE2MSIsImMiOjh9"    // aba "Demandas × mercado"
   }
 };
